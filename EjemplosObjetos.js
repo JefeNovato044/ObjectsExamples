@@ -3,7 +3,7 @@ var Animal = {
     nombre:"Mishu" ,
     edad: 50,
     saludar : function (){
-        console.log("Hola soy un " + this.philo + "que habla," + " y mi nombre es " + this.nombre);
+        console.log("Hola soy un " + this.philo + " que habla," + " y mi nombre es " + this.nombre);
     }
 }
 
@@ -24,17 +24,18 @@ class Sujeto {
 }
 
 //Una clase hijo de Sujeto
-class Mujer {
-    constructor (nombre, edad, personalidad, altura,colorFalda){
-        Sujeto.call(this, nombre, personalidad,edad, altura);//Heredar las características del la clase Sujeto
+class Mujer extends Sujeto{
+    
+    constructor(nombre, edad, personalidad, altura,colorFalda){
+        super(nombre, edad, personalidad, altura) //Heredar variables de objeto padre.
         this.colorFalda = colorFalda;
     }
-    
 
     presentarse(){
-        console.log("Hola soy " + this.nombre + " tengo " + this.edad + " años, mido " + this.altura + " metros y mi personalidad es del tipo " + this.personalidad + "y mi falda es" + this.colorFalda + ".");
+        console.log("Hola soy " + this.nombre + " tengo " + this.edad + " años, mido " + this.altura + " metros y mi personalidad es del tipo " + this.personalidad + " y mi falda es " + this.colorFalda + ".");
     }
 }
+
 
     //Modificar los parametros del objeto
     Animal.philo = "Gato";
